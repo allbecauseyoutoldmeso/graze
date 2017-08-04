@@ -13,7 +13,7 @@ The code is designed around four classes:
 * An account has an id property, and has many boxes and ratings.
 * A box has id and delivery-date properties, belongs to an account, and has a many-to-many relationship with products.
 * A product has id, name and category properties, has many ratings, and has a many-to-many relationship with boxes.
-* A rating belongs to both an account and a product, and has a rating property.
+* A rating belongs to both an account and a product, and has a rating property. For example a rating might belong to the account '10700', and property '104', and have a rating property of 3, meaning that the customer with account id 10700 has given product 104 a score of 3.
 
 I have assumed that the user already has access to a list of Account IDs. If they enter a non-existent ID an error message is displayed.
 
