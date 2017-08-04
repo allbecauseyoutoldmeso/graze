@@ -3,7 +3,7 @@ class Account < ActiveRecord::Base
   self.table_name = 'account'
 
   def ratings
-    [Rating.find_by(account_id: id)]
+    Rating.all.select { |rating| rating.account_id == id }
   end
 
   def product_rating(product_id)
@@ -11,7 +11,7 @@ class Account < ActiveRecord::Base
   end
 
   def product_rating_info(product_id)
-    product_rating(product_id) == nil ? 1 : product_rating(product_id).rating    
+    product_rating(product_id) == nil ? 1 : product_rating(product_id).rating
   end
 
   has_many :boxes

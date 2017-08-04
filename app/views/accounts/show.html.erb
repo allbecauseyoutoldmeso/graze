@@ -19,7 +19,7 @@
 
     <% box.products.each do |product| %>
 
-      <%= product.name %>;
+      Product: <%= product.name %>; Rating: <%= @account.product_rating_info(product.id) %> </br>
 
     <% end %>
 
