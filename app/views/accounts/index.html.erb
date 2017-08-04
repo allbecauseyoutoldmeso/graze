@@ -1,4 +1,16 @@
+<p>
+
 <%= form_tag(accounts_path, :method => 'get', id: 'search-form') do %>
 <%= text_field_tag :search, params[:search], placeholder: 'account id' %>
 <%= submit_tag 'Find Account' %>
 <% end %>
+
+</p>
+
+<p>
+
+<% flash.each do |key, value| %>
+  <%= value %>
+<% end %>
+
+</p>
