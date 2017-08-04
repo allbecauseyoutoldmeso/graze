@@ -1,24 +1,24 @@
-# README
+# Graze Database
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Instructions
 
-Things you may want to cover:
+* This code presupposes the existence of MySQL databases called graze_development and graze_test.  If necessary they can be renamed in ***config/database.yml***.
+* To get started navigate into this repository and run ``bundle install``
+* Type ``rspec`` to run my tests.
+* Type ``rails s`` and to run the code locally at ***http://localhost:3000***.
 
-* Ruby version
+## Design
 
-* System dependencies
+The code is designed around four classes:
+* An account has an id property, and has many boxes and ratings.
+* A box has id and delivery-date properties, belongs to an account, and has a many-to-many relationship with products.
+* A product has id, name and category properties, has many ratings, and has a many-to-many relationship with boxes.
+* A rating belongs to both an account and a product, and has a rating property.
 
-* Configuration
+I have assumed that the user already has access to a list of Account IDs. If they enter a non-existent ID an error message is displayed.
 
-* Database creation
+I've also assumed that the default rating is 1 if none is entered for a product.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Desirable Improvements
+* Enabling the user to edit ratings
+* Increasing efficiency - currently loading data is very slow!
