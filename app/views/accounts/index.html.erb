@@ -1,3 +1,5 @@
-<% @accounts.each do |account| %>
-  <%= link_to account.id, account_path(account) %>
+
+<%= form_tag(accounts_path, :method => 'get', id: 'search-form') do %>
+<%= text_field_tag :search, params[:search], placeholder: 'account id' %>
+<%= submit_tag 'Find Account' %>
 <% end %>
