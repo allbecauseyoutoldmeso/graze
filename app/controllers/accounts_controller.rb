@@ -1,11 +1,14 @@
 class AccountsController < ApplicationController
 
   def index
-    # @accounts = Account.all
     if params[:search]
       account = Account.find(params[:search])
       redirect_to account_path(account)
     end
+  end
+
+  def show
+    @account = Account.find(params[:id])
   end
 
 end

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+
+<% @account.boxes.each do |box| %>
+
+  <p>
+
+    Box number: <%= box.id %> </br>
+
+    Delivery date: <%= box.delivery_date %> </br>
+
+    Contents:
+
+    <% box.products.each do |product| %>
+
+      <%= product.name %>;
+
+    <% end %>
+
+  </p>
+
+<% end %>
+
+</body>
+
+</html>
