@@ -1,21 +1,14 @@
-<!DOCTYPE html>
-
-<html>
-
-<head>
-</head>
-
-<body>
+<p class='headings'> Account number:  <%= @account.id %> </p>
 
 <% @account.boxes.each do |box| %>
 
   <p>
 
-    Box number: <%= box.id %> </br>
+    <span class='subheadings'> Box number: <%= box.id %> </span> </br>
 
     Delivery date: <%= box.delivery_date %> </br>
 
-    Contents:
+    Contents: </br>
 
     <% box.products.each do |product| %>
 
@@ -26,7 +19,3 @@
   </p>
 
 <% end %>
-
-</body>
-
-</html>

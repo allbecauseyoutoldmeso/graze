@@ -1,0 +1,6 @@
+<%= @rating.rating %>
+
+<%= form_for @rating do |f| %>
+  <% f.text_field :rating %>
+  <% f.submit %>
+<% end %>
