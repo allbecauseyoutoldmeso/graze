@@ -5,7 +5,7 @@
 * This code presupposes the existence of MySQL databases called graze_development and graze_test.  If necessary they can be renamed in ***config/database.yml***.
 * To get started navigate into this repository and run ``bundle install``
 * Type ``rspec`` to run my tests.
-* Type ``rails s`` and to run the code locally at ***http://localhost:3000***.
+* Type ``rails s`` to run the code locally at ***http://localhost:3000***.
 
 ## Design
 
