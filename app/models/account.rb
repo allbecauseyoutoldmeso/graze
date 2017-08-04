@@ -11,7 +11,11 @@ class Account < ActiveRecord::Base
   end
 
   def product_rating_info(product_id)
-    product_rating(product_id) == nil ? 1 : product_rating(product_id).rating
+    rated?(product_id) ? product_rating(product_id).rating : 1
+  end
+
+  def rated?(product_id)
+    product_rating(product_id) != nil
   end
 
   has_many :boxes
