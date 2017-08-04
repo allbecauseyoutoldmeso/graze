@@ -25,4 +25,13 @@ describe Account, type: :model do
     end
   end
 
+  describe '#product_rating' do
+    it 'returns the rating for a specific product' do
+      account = Account.create(id: 10700)
+      product = Product.create(id: 104, name: 'wasapea', category: 'snack', image_url: 'www.wasapea.com')
+      rating = Rating.create(rating: 3, product_id: 104, account_id: 10700)
+      expect(account.product_rating(104).rating).to eq 3
+    end
+  end
+
 end
