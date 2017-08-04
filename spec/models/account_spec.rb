@@ -10,4 +10,10 @@ describe Account, type: :model do
     end
   end
 
+  context 'associations' do
+    it 'should have many boxes' do
+      should have_many(:boxes)
+    end
+  end
+
 end
